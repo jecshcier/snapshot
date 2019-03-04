@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=title%></title>
+</head>
+<body>
+<h1>截屏工具V1.0 简陋版</h1>
+<h4>阿C出品</h4>
+<div>
+    <input id="shotUrl" type="text" value="http://www.baidu.com" placeholder="请输入快照的网址">
+    <button onclick="shot(document.getElementById('shotUrl').value)">生成快照</button>
+</div>
+
+<div id="preview">
+
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function shot(url) {
+    $("#preview").empty()
+    $("#preview").html('截屏生成中...')
+    if (url.indexOf('http://') || url.indexOf('https://')) {
+      $.ajax({
+        url: '/snapshot/getSnapshot',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+          url: url,
+        }
+      }).done(function (data) {
+        setTimeout(function(){
+          $("#preview").empty()
+          $("#preview").append('<span>截屏地址:</span><a href="' + data.url + '">' + data.url + '</a>')
+          $("#preview").append('<img src="' + data.url + '"></img>')
+        },10000)
+      }).fail(function () {
+
+      })
+    } else {
+      alert('请输入正确的网址！')
+    }
+  }
+</script>
+</html>
