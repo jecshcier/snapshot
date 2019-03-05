@@ -1,7 +1,7 @@
 import * as Router from 'koa-router'
 
 const router = new Router()
-router.prefix('/')
+router.prefix('/snapshot/index')
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {

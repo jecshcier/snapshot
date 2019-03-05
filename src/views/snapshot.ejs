@@ -35,16 +35,33 @@
         }
       }).done(function (data) {
         setTimeout(function(){
-          $("#preview").empty()
-          $("#preview").append('<span>截屏地址:</span><a href="' + data.url + '">' + data.url + '</a>')
-          $("#preview").append('<img src="' + data.url + '"></img>')
-        },10000)
+          $("#preview").append('<img onload="imgSuccess(this)" onerror="imgError(this)" style="display:none;" src="' + data.url + '" />')
+        },1000)
       }).fail(function () {
 
       })
     } else {
       alert('请输入正确的网址！')
     }
+  }
+
+  function imgError(_this){
+    if(!_this.timer){
+      _this.timer = setInterval(()=>{
+        var srcArr = _this.src.split('?')
+        _this.src = srcArr[0] + '?' + +new Date()
+      },5000)
+    }
+  }
+
+  function imgSuccess(_this){
+    if(_this.timer){
+      clearInterval(_this.timer)
+    }
+    _this.style.display = 'inline'
+    $("#preview").empty()
+    $("#preview").append('<span>截图下载地址:</span><a href="' + _this.src + '" download="' + +new Date() + '.png">' + _this.src + '</a>')
+    $("#preview").append('<img src="' + _this.src + '" />')
   }
 </script>
 </html>
