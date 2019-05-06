@@ -14,9 +14,7 @@ import * as util from 'util'
 import * as Glob from 'glob'
 import * as fs from 'fs-extra'
 import CONFIG from './config'
-
 const glob = util.promisify(Glob)
-
 
 // error handler
 onerror(app)
