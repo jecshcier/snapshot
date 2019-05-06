@@ -23,7 +23,13 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
     let timer
+    let snapCheck = false
   function shot(url) {
+      if(snapCheck){
+        alert("请不要频繁点击！")
+        return false
+      }
+    snapCheck = true
     $("#preview").empty()
     $("#preview").html('截屏生成中...')
     if (url.indexOf('http://') || url.indexOf('https://')) {
@@ -40,6 +46,7 @@
         }, 3000)
       }).fail(function () {
         alert("请求失败！")
+        snapCheck = false
       })
     } else {
       alert('请输入正确的网址！')
@@ -49,8 +56,9 @@
   function getImgUrl(url) {
     $.ajax({
       url: url,
-      type: 'GET'
+      type: 'HEAD'
     }).done(function (data) {
+      snapCheck = false
       clearInterval(timer)
       $("#preview").empty()
       $("#preview").append('<span>截图下载地址:</span><a href="' + url + '" download="' + +new Date() + '.png">' + url + '</a>')
