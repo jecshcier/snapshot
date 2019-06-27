@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%=title%></title>
+    <title><%= title %></title>
 </head>
 <body>
 <h1>截屏工具V1.0 简陋版</h1>
@@ -22,46 +22,65 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
+  let snapCheck = false
+  let postCount = 0
+
   function shot(url) {
+    if (snapCheck) {
+      alert("请不要频繁点击！")
+      return false
+    }
+    snapCheck = true
     $("#preview").empty()
     $("#preview").html('截屏生成中...')
     if (url.indexOf('http://') || url.indexOf('https://')) {
-      $.ajax({
-        url: '/snapshot/getSnapshot',
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          url: url,
+      sendAjax('/snapshot/getSnapshot', 'POST', 'json', {url: url}).done(function (data) {
+        if (data.flag) {
+          getImgUrl(data.key)
+        } else {
+          alert("请求失败！")
         }
-      }).done(function (data) {
-        setTimeout(function(){
-          $("#preview").append('<img onload="imgSuccess(this)" onerror="imgError(this)" style="display:none;" src="' + data.url + '" />')
-        },1000)
-      }).fail(function () {
-
+      }).fail(function (err) {
+        alert("请求失败！")
       })
-    } else {
-      alert('请输入正确的网址！')
     }
   }
 
-  function imgError(_this){
-    if(!_this.timer){
-      _this.timer = setInterval(()=>{
-        var srcArr = _this.src.split('?')
-        _this.src = srcArr[0] + '?' + +new Date()
-      },5000)
-    }
+  function getImgUrl(key) {
+    sendAjax('/snapshot/getSnapshotImg', 'POST', 'json', {key: key}).done(function (data) {
+      if (data.flag) {
+        snapCheck = false
+        $("#preview").empty()
+        $("#preview").append('<span>截图下载地址:</span><a href="' + data.url + '" download="' + +new Date() + '.png">' + data.url + '</a>')
+      } else {
+        if (data.err) {
+          alert("截图生成失败！请重试！")
+        } else {
+          postCount++
+          if (postCount > 30) {
+            snapCheck = false
+            postCount = 0
+            $("#preview").empty()
+            alert("请求超时")
+          } else {
+            setTimeout(() => {
+              getImgUrl(key)
+            }, 3000)
+          }
+        }
+      }
+    }).fail(function (err) {
+      alert("请求失败，请重试！")
+    })
   }
 
-  function imgSuccess(_this){
-    if(_this.timer){
-      clearInterval(_this.timer)
-    }
-    _this.style.display = 'inline'
-    $("#preview").empty()
-    $("#preview").append('<span>截图下载地址:</span><a href="' + _this.src + '" download="' + +new Date() + '.png">' + _this.src + '</a>')
-    $("#preview").append('<img src="' + _this.src + '" />')
+  function sendAjax(url, type, dataType, data) {
+    return $.ajax({
+      url: url,
+      type: type,
+      dataType: dataType,
+      data: data
+    })
   }
 </script>
 </html>
