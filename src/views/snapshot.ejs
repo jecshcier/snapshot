@@ -39,9 +39,13 @@
           getImgUrl(data.key)
         } else {
           alert("请求失败！")
+          snapCheck = false
+          $("#preview").empty()
         }
       }).fail(function (err) {
         alert("请求失败！")
+        snapCheck = false
+        $("#preview").empty()
       })
     }
   }
@@ -55,6 +59,8 @@
       } else {
         if (data.err) {
           alert("截图生成失败！请重试！")
+          snapCheck = false
+          $("#preview").empty()
         } else {
           postCount++
           if (postCount > 30) {
@@ -71,6 +77,8 @@
       }
     }).fail(function (err) {
       alert("请求失败，请重试！")
+      snapCheck = false
+      $("#preview").empty()
     })
   }
 
