@@ -41,7 +41,7 @@ router.post('/getSnapshot', async (ctx, next) => {
     } else {
       sourceMap[key] = {
         flag: false,
-        url: m.err
+        err: 1
       }
     }
   })
