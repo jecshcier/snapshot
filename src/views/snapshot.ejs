@@ -35,7 +35,7 @@
     $("#preview").html('截屏生成中...')
     if (url.indexOf('http://') || url.indexOf('https://')) {
       sendAjax('/snapshot/getSnapshot', 'POST', 'json', {url: url}).done(function (data) {
-        if (data.flag) {
+        if (!data.errCode) {
           getImgUrl(data.key)
         } else {
           alert("请求失败！")
@@ -52,7 +52,7 @@
 
   function getImgUrl(key) {
     sendAjax('/snapshot/getSnapshotImg', 'POST', 'json', {key: key}).done(function (data) {
-      if (data.flag) {
+      if (!data.errCode) {
         snapCheck = false
         $("#preview").empty()
         $("#preview").append('<span>截图下载地址:</span><a href="' + data.url + '" download="' + +new Date() + '.png">' + data.url + '</a>')

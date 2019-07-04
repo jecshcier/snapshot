@@ -9,6 +9,16 @@
   dependencies:
     "@types/node" "*"
 
+"@types/bluebird@*", "@types/bluebird@^3.5.27":
+  version "3.5.27"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/bluebird/-/bluebird-3.5.27.tgz#61eb4d75dc6bfbce51cf49ee9bbebe941b2cb5d0"
+  integrity sha1-YetNddxr+85Rz0num76+lBsstdA=
+
+"@types/bluebird@3.5.26":
+  version "3.5.26"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/bluebird/-/bluebird-3.5.26.tgz#a38c438ae84fa02431d6892edf86e46edcbca291"
+  integrity sha1-o4xDiuhPoCQx1oku34bkbty8opE=
+
 "@types/body-parser@*":
   version "1.17.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
@@ -21,6 +31,13 @@
   version "3.4.32"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
   integrity sha1-qg6WFrlDXMrQK8UrW0VP/Cxwuig=
+  dependencies:
+    "@types/node" "*"
+
+"@types/continuation-local-storage@*":
+  version "3.2.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/continuation-local-storage/-/continuation-local-storage-3.2.1.tgz#a33e0df9dce9b424d1c98fc4fdebd8578dceec7e"
+  integrity sha1-oz4N+dzptCTRyY/E/evYV43O7H4=
   dependencies:
     "@types/node" "*"
 
@@ -163,6 +180,11 @@
     "@types/koa-compose" "*"
     "@types/node" "*"
 
+"@types/lodash@*":
+  version "4.14.135"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/lodash/-/lodash-4.14.135.tgz#d2607c35dd68f70c2b35ba020c667493dedd8447"
+  integrity sha1-0mB8Nd1o9wwrNboCDGZ0k97dhEc=
+
 "@types/mime@*":
   version "2.0.1"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
@@ -185,6 +207,11 @@
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/node/-/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
   integrity sha1-0RgTucD/iqyinwTLwSgX9MfWVuU=
 
+"@types/node@11.12.2":
+  version "11.12.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/node/-/node-11.12.2.tgz#d7f302e74b10e9801d52852137f652d9ee235da8"
+  integrity sha1-1/MC50sQ6YAdUoUhN/ZS2e4jXag=
+
 "@types/node@^10.12.18":
   version "10.14.6"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/node/-/node-10.14.6.tgz#9cbfcb62c50947217f4d88d4d274cc40c22625a9"
@@ -202,6 +229,26 @@
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha1-fuMwunyq+5gJC+zoal7kQRWQTCw=
 
+"@types/sequelize@4.28.1":
+  version "4.28.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/sequelize/-/sequelize-4.28.1.tgz#9f111fba37527cf1d6c99da9203c278b7df275aa"
+  integrity sha1-nxEfujdSfPHWyZ2pIDwni33ydao=
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/continuation-local-storage" "*"
+    "@types/lodash" "*"
+    "@types/validator" "*"
+
+"@types/sequelize@^4.28.3":
+  version "4.28.3"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/sequelize/-/sequelize-4.28.3.tgz#c393bf3cbfea2e18786ce43267e5921d91e27d4e"
+  integrity sha1-w5O/PL/qLhh4bOQyZ+WSHZHifU4=
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/continuation-local-storage" "*"
+    "@types/lodash" "*"
+    "@types/validator" "*"
+
 "@types/serve-static@*":
   version "1.13.2"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/serve-static/-/serve-static-1.13.2.tgz#f5ac4d7a6420a99a6a45af4719f4dcd8cd907a48"
@@ -216,6 +263,11 @@
   integrity sha1-evaTYPpl7w3stB/RUL9MpcDO/fU=
   dependencies:
     "@types/node" "*"
+
+"@types/validator@*", "@types/validator@^10.11.1":
+  version "10.11.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/@types/validator/-/validator-10.11.1.tgz#76e983ce155261838463b73728856cf8bc628d53"
+  integrity sha1-dumDzhVSYYOEY7c3KIVs+LxijVM=
 
 abbrev@1:
   version "1.1.1"
@@ -271,7 +323,7 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-any-promise@^1.0.0, any-promise@^1.1.0:
+any-promise@^1.0.0, any-promise@^1.1.0, any-promise@^1.3.0:
   version "1.3.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
   integrity sha1-q8av7tzqUugJzcA3au0845Y10X8=
@@ -369,6 +421,11 @@ bluebird@^3.1.1:
   version "3.5.4"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/bluebird/-/bluebird-3.5.4.tgz#d6cc661595de30d5b3af5fcedd3c0b3ef6ec5714"
   integrity sha1-1sxmFZXeMNWzr1/O3TwLPvbsVxQ=
+
+bluebird@^3.5.0:
+  version "3.5.5"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
+  integrity sha1-qNCv1zJR7/u9X+OEp31zADwXpx8=
 
 boxen@^1.2.1:
   version "1.3.0"
@@ -524,6 +581,14 @@ cli-boxes@^1.0.0:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
   integrity sha1-T6kXw+WclKAEzWH47lCdplFocUM=
 
+cls-bluebird@^2.1.0:
+  version "2.1.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/cls-bluebird/-/cls-bluebird-2.1.0.tgz#37ef1e080a8ffb55c2f4164f536f1919e7968aee"
+  integrity sha1-N+8eCAqP+1XC9BZPU28ZGeeWiu4=
+  dependencies:
+    is-bluebird "^1.0.2"
+    shimmer "^1.1.0"
+
 co-body@^4.2.0:
   version "4.2.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/co-body/-/co-body-4.2.0.tgz#74df20fa73262125dc45482af04e342ea8db3515"
@@ -672,7 +737,7 @@ crypto-random-string@^1.0.0:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
-debug@*, debug@^4.0.1, debug@^4.1.0:
+debug@*, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.1.1"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha1-O3ImAlUQnGtYnO4FDx1RYTlmR5E=
@@ -754,6 +819,11 @@ delegates@^1.0.0:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
+denque@^1.4.0:
+  version "1.4.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/denque/-/denque-1.4.1.tgz#6744ff7641c148c3f8a69c307e51235c1f4a37cf"
+  integrity sha1-Z0T/dkHBSMP4ppwwflEjXB9KN88=
+
 depd@^1.1.2, depd@~1.1.2:
   version "1.1.2"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
@@ -775,6 +845,11 @@ dot-prop@^4.1.0:
   integrity sha1-HxngwuGqDjJ5fEl5nyg3rGr2nFc=
   dependencies:
     is-obj "^1.0.0"
+
+dottie@^2.0.0:
+  version "2.0.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/dottie/-/dottie-2.0.1.tgz#697ad9d72004db7574d21f892466a3c285893659"
+  integrity sha1-aXrZ1yAE23V00h+JJGajwoWJNlk=
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -807,6 +882,11 @@ es6-promisify@^5.0.0:
   integrity sha1-UQnWLz5W6pZ8S2NQWu8IKRyKUgM=
   dependencies:
     es6-promise "^4.0.3"
+
+es6-shim@0.35.3:
+  version "0.35.3"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/es6-shim/-/es6-shim-0.35.3.tgz#9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26"
+  integrity sha1-m/tzY/7//4emzbbNk+QF7DxLbyY=
 
 escape-html@^1.0.3:
   version "1.0.3"
@@ -960,6 +1040,13 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+generate-function@^2.3.1:
+  version "2.3.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/generate-function/-/generate-function-2.3.1.tgz#f069617690c10c868e73b8465746764f97c3479f"
+  integrity sha1-8GlhdpDBDIaOc7hGV0Z2T5fDR58=
+  dependencies:
+    is-property "^1.0.2"
+
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
@@ -977,6 +1064,18 @@ glob-parent@^3.1.0:
   dependencies:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
+
+glob@7.1.2:
+  version "7.1.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
+  integrity sha1-wZyd+aAocC1nhhI4SmVSQExjbRU=
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
 
 glob@^7.1.3:
   version "7.1.3"
@@ -1114,7 +1213,7 @@ iconv-lite@0.4.13:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
   integrity sha1-H4irpKsLFQjoMSrMOTRfNumS4vI=
 
-iconv-lite@^0.4.4:
+iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
@@ -1147,6 +1246,11 @@ inflation@~2.0.0:
   version "2.0.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/inflation/-/inflation-2.0.0.tgz#8b417e47c28f925a45133d914ca1fd389107f30f"
   integrity sha1-i0F+R8KPklpFEz2RTKH9OJEH8w8=
+
+inflection@1.12.0:
+  version "1.12.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/inflection/-/inflection-1.12.0.tgz#a200935656d6f5f6bc4dc7502e1aecb703228416"
+  integrity sha1-ogCTVlbW9fa8TcdQLhrstwMihBY=
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -1186,6 +1290,11 @@ is-binary-path@^1.0.0:
   integrity sha1-dfFmQrSA8YenEcgUFh/TpKdlWJg=
   dependencies:
     binary-extensions "^1.0.0"
+
+is-bluebird@^1.0.2:
+  version "1.0.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/is-bluebird/-/is-bluebird-1.0.2.tgz#096439060f4aa411abee19143a84d6a55346d6e2"
+  integrity sha1-CWQ5Bg9KpBGr7hkUOoTWpVNG1uI=
 
 is-buffer@^1.1.5:
   version "1.1.6"
@@ -1324,6 +1433,11 @@ is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   integrity sha1-LBY7P6+xtgbZ0Xko8FwqHDjgdnc=
   dependencies:
     isobject "^3.0.1"
+
+is-property@^1.0.2:
+  version "1.0.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
+  integrity sha1-V/4cTkhHTt1lsJkR8msc1Ald2oQ=
 
 is-redirect@^1.0.0:
   version "1.0.0"
@@ -1556,17 +1670,27 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
+
 long-timeout@0.1.1:
   version "0.1.1"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/long-timeout/-/long-timeout-0.1.1.tgz#9721d788b47e0bcb5a24c2e2bee1a0da55dab514"
   integrity sha1-lyHXiLR+C8taJMLivuGg2lXatRQ=
+
+long@^4.0.0:
+  version "4.0.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
+  integrity sha1-mntxz7fTYaGU6lVSQckvdGjVvyg=
 
 lowercase-keys@^1.0.0:
   version "1.0.1"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
   integrity sha1-b54wtHCE2XGnyCD/FabFFnt0wm8=
 
-lru-cache@^4.0.1:
+lru-cache@^4.0.1, lru-cache@^4.1.3:
   version "4.1.5"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
   integrity sha1-i75Q6oW+1ZvJ4z3KuCNe6bz0Q80=
@@ -1691,14 +1815,14 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment-timezone@^0.5.25:
+moment-timezone@^0.5.21, moment-timezone@^0.5.25:
   version "0.5.25"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/moment-timezone/-/moment-timezone-0.5.25.tgz#a11bfa2f74e088327f2cd4c08b3e7bdf55957810"
   integrity sha1-oRv6L3TgiDJ/LNTAiz5731WVeBA=
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0":
+"moment@>= 2.9.0", moment@^2.24.0:
   version "2.24.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
@@ -1713,6 +1837,20 @@ ms@^2.1.1:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha1-MKWGTrPrsKZvLr5tcnrwagnYbgo=
 
+mysql2@^1.6.5:
+  version "1.6.5"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/mysql2/-/mysql2-1.6.5.tgz#6695304fa2ce793dda5c98e8bbec65cbd2e6cb9d"
+  integrity sha1-ZpUwT6LOeT3aXJjou+xly9Lmy50=
+  dependencies:
+    denque "^1.4.0"
+    generate-function "^2.3.1"
+    iconv-lite "^0.4.24"
+    long "^4.0.0"
+    lru-cache "^4.1.3"
+    named-placeholders "^1.1.2"
+    seq-queue "^0.0.5"
+    sqlstring "^2.3.1"
+
 mz@^2.3.1, mz@^2.4.0:
   version "2.7.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/mz/-/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"
@@ -1721,6 +1859,13 @@ mz@^2.3.1, mz@^2.4.0:
     any-promise "^1.0.0"
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
+
+named-placeholders@^1.1.2:
+  version "1.1.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/named-placeholders/-/named-placeholders-1.1.2.tgz#ceb1fbff50b6b33492b5cf214ccf5e39cef3d0e8"
+  integrity sha1-zrH7/1C2szSStc8hTM9eOc7z0Og=
+  dependencies:
+    lru-cache "^4.1.3"
 
 nan@^2.12.1:
   version "2.13.2"
@@ -2101,6 +2246,11 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
+
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/regex-not/-/regex-not-1.0.2.tgz#1f4ece27e00b0b65e0247a6810e6a85d83a5752c"
@@ -2157,6 +2307,13 @@ ret@~0.1.10:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha1-uKSCXVvbH8P29Twrwz+BOIaBx7w=
 
+retry-as-promised@^3.1.0:
+  version "3.2.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/retry-as-promised/-/retry-as-promised-3.2.0.tgz#769f63d536bec4783549db0777cb56dadd9d8543"
+  integrity sha1-dp9j1Ta+xHg1SdsHd8tW2t2dhUM=
+  dependencies:
+    any-promise "^1.3.0"
+
 rimraf@^2.6.1:
   version "2.6.3"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
@@ -2197,6 +2354,53 @@ semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
   version "5.7.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
   integrity sha1-eQp89v6lRZuslhELKbYEEtyP+Ws=
+
+semver@^6.1.1:
+  version "6.1.2"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/semver/-/semver-6.1.2.tgz#079960381376a3db62eb2edc8a3bfb10c7cfe318"
+  integrity sha1-B5lgOBN2o9ti6y7cijv7EMfP4xg=
+
+seq-queue@^0.0.5:
+  version "0.0.5"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
+  integrity sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4=
+
+sequelize-pool@^2.2.0:
+  version "2.2.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/sequelize-pool/-/sequelize-pool-2.2.0.tgz#fd4eb05ccefb5df5c23d2cc6fd934c20fd9c5dab"
+  integrity sha1-/U6wXM77XfXCPSzG/ZNMIP2cXas=
+
+sequelize-typescript@^0.6.11:
+  version "0.6.11"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/sequelize-typescript/-/sequelize-typescript-0.6.11.tgz#3ed957adbb14c95c1b05da1d2d0e669dbc8e1bf8"
+  integrity sha1-PtlXrbsUyVwbBdodLQ5mnbyOG/g=
+  dependencies:
+    "@types/bluebird" "3.5.26"
+    "@types/node" "11.12.2"
+    "@types/sequelize" "4.28.1"
+    es6-shim "0.35.3"
+    glob "7.1.2"
+
+sequelize@^5.9.0:
+  version "5.9.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/sequelize/-/sequelize-5.9.0.tgz#8c5e6e681a8ef451aa6148ac9fb7a25f27ad4ccc"
+  integrity sha1-jF5uaBqO9FGqYUisn7eiXyetTMw=
+  dependencies:
+    bluebird "^3.5.0"
+    cls-bluebird "^2.1.0"
+    debug "^4.1.1"
+    dottie "^2.0.0"
+    inflection "1.12.0"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    moment-timezone "^0.5.21"
+    retry-as-promised "^3.1.0"
+    semver "^6.1.1"
+    sequelize-pool "^2.2.0"
+    toposort-class "^1.0.1"
+    uuid "^3.2.1"
+    validator "^10.11.0"
+    wkx "^0.4.6"
 
 set-blocking@~2.0.0:
   version "2.0.0"
@@ -2244,6 +2448,11 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+
+shimmer@^1.1.0:
+  version "1.2.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/shimmer/-/shimmer-1.2.1.tgz#610859f7de327b587efebf501fb43117f9aff337"
+  integrity sha1-YQhZ994ye1h+/r9QH7QxF/mv8zc=
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -2319,6 +2528,11 @@ split-string@^3.0.1, split-string@^3.0.2:
   integrity sha1-fLCd2jqGWFcFxks5pkZgOGguj+I=
   dependencies:
     extend-shallow "^3.0.0"
+
+sqlstring@^2.3.1:
+  version "2.3.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/sqlstring/-/sqlstring-2.3.1.tgz#475393ff9e91479aea62dcaf0ca3d14983a7fb40"
+  integrity sha1-R1OT/56RR5rqYtyvDKPRSYOn+0A=
 
 static-extend@^0.1.1:
   version "0.1.2"
@@ -2478,6 +2692,11 @@ toidentifier@1.0.0:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
 
+toposort-class@^1.0.1:
+  version "1.0.1"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/toposort-class/-/toposort-class-1.0.1.tgz#7ffd1f78c8be28c3ba45cd4e1a3f5ee193bd9988"
+  integrity sha1-f/0feMi+KMO6Rc1OGj9e4ZO9mYg=
+
 touch@^3.1.0:
   version "3.1.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/touch/-/touch-3.1.0.tgz#fe365f5f75ec9ed4e56825e0bb76d24ab74af83b"
@@ -2613,10 +2832,15 @@ util-deprecate@~1.0.1:
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-uuid@^3.3.2:
+uuid@^3.2.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
+
+validator@^10.11.0:
+  version "10.11.0"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/validator/-/validator-10.11.0.tgz#003108ea6e9a9874d31ccc9e5006856ccd76b228"
+  integrity sha1-ADEI6m6amHTTHMyeUAaFbM12sig=
 
 vary@^1.1.2:
   version "1.1.2"
@@ -2648,6 +2872,13 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
   integrity sha1-VDjNLqk7IC76Ohn+iIeu58lPnJ0=
+
+wkx@^0.4.6:
+  version "0.4.7"
+  resolved "http://nexus.mwbyd.cn/nexus/content/groups/npm-group/wkx/-/wkx-0.4.7.tgz#ba0e4f9e785e95c9975856c1834f19a95c65cfb5"
+  integrity sha1-ug5PnnhelcmXWFbBg08ZqVxlz7U=
+  dependencies:
+    "@types/node" "*"
 
 wordwrap@0.0.2:
   version "0.0.2"

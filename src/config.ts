@@ -2,17 +2,19 @@ import * as path from 'path'
 
 export default {
   PORT: '3033',
+  REDIS:{
+
+  },
   DB: {
-    username: "",
-    password: "",
-    database: "",
-    option: {
-      host: '',
-      dialect: "",
-      define: {
-        paranoid: true,
-        freezeTableName: true,
-      }
+    username: "root",
+    password: "123456",
+    database: "rms",
+    host: '127.0.0.1',
+    port: 3306,
+    dialect: "mysql",
+    define: {
+      paranoid: true,
+      freezeTableName: true,
     }
   },
   DIR: {

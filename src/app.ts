@@ -14,8 +14,11 @@ import * as util from 'util'
 import * as Glob from 'glob'
 import * as fs from 'fs-extra'
 import CONFIG from './config'
-const glob = util.promisify(Glob)
+import sequelize from './sequelize'
+import {createStaticResource} from './task'
+import ResponseMessage from './lib/responseMessage'
 
+const glob = util.promisify(Glob)
 // error handler
 onerror(app)
 
@@ -71,26 +74,21 @@ if (process.env.NODE_ENV === 'dev') {
   }).catch((error) => {
     console.log(error)
   })
+  createStaticResource()
 }
 
-//创建缓存目录
-
-const cacheDir = `${CONFIG.STATIC.dir}/${CONFIG.DIR.cacheDir}`
-const fileDir = `${CONFIG.STATIC.dir}/${CONFIG.DIR.fileDir}`
-Promise.all([//创建缓存目录
-  fs.ensureDir(cacheDir),
-  fs.ensureDir(fileDir)]).then((data)=>{
-  console.log('静态目录创建成功------>')
-}).catch((err)=>{
-  console.log(err)
-})
+//挂载消息返回处理
+const responseMessage = new ResponseMessage()
+Object.assign(app, {responseMessage})
 
 //配置数据库连接池
+Object.assign(app, {sequelize})
 
 
 // error-handling
 app.on('error', (err: any, ctx: any) => {
   console.error('server error', err, ctx)
 })
+
 
 export default app
