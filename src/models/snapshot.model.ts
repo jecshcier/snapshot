@@ -37,6 +37,13 @@ export default class Image extends Model<Image> {
   })
   file_name: string
 
+  @Column({
+    type: DataType.INTEGER(1),
+    allowNull: true,
+    comment: "截图戳 0 - 生成完毕 1 - 生成失败 2 - 已被清理"
+  })
+  img_flag: string
+
   @CreatedAt
   create_time: Date
 

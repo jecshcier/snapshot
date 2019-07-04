@@ -61,7 +61,18 @@
           alert("截图生成失败！请重试！")
           snapCheck = false
           $("#preview").empty()
-        } else {
+        }
+        if(data.errCode === 2){
+          alert("截图生成失败，请确保网址正确！")
+          snapCheck = false
+          $("#preview").empty()
+        }
+        else if(data.errCode === 3){
+          alert("截图已被过期清理！")
+          snapCheck = false
+          $("#preview").empty()
+        }
+        else{
           postCount++
           if (postCount > 30) {
             snapCheck = false
