@@ -15,7 +15,7 @@ import * as Glob from 'glob'
 import * as fs from 'fs-extra'
 import CONFIG from './config'
 import sequelize from './sequelize'
-import {createStaticResource} from './task'
+import {createStaticDir,copyStaticResource} from './task'
 import ResponseMessage from './lib/responseMessage'
 
 const glob = util.promisify(Glob)
@@ -60,21 +60,8 @@ glob(__dirname + '/controller/*.js').then((controllers) => {
 
 //处理静态资源
 if (process.env.NODE_ENV === 'dev') {
-  Promise.all([
-    //复制view
-    fs.copy(`${path.join(__dirname, `../src/views`)}`, `${__dirname}/views`, {
-      overwrite: true,
-      errorOnExist: false
-    }),
-    fs.copy(`${path.join(__dirname, `../package.json`)}`, `${__dirname}/package.json`, {
-      overwrite: true,
-      errorOnExist: false
-    })]).then((data) => {
-    console.log('静态资源复制成功------>')
-  }).catch((error) => {
-    console.log(error)
-  })
-  createStaticResource()
+  copyStaticResource()
+  createStaticDir()
 }
 
 //挂载消息返回处理

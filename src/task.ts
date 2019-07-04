@@ -3,7 +3,7 @@ import * as fs from 'fs-extra'
 import * as path from "path"
 import * as schedule from 'node-schedule'
 
-export function createStaticResource() {
+export function createStaticDir() {
 
   //创建缓存目录
 
@@ -18,6 +18,23 @@ export function createStaticResource() {
     console.log(err)
   })
 
+}
+
+export function copyStaticResource() {
+  Promise.all([
+    //复制view
+    fs.copy(`${path.join(__dirname, `../src/views`)}`, `${__dirname}/views`, {
+      overwrite: true,
+      errorOnExist: false
+    }),
+    fs.copy(`${path.join(__dirname, `../package.json`)}`, `${__dirname}/package.json`, {
+      overwrite: true,
+      errorOnExist: false
+    })]).then((data) => {
+    console.log('静态资源复制成功------>')
+  }).catch((error) => {
+    console.log(error)
+  })
 }
 
 export function clearStaticResource() {

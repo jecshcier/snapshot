@@ -55,7 +55,7 @@
       if (!data.errCode) {
         snapCheck = false
         $("#preview").empty()
-        $("#preview").append('<span>截图下载地址:</span><a href="' + data.url + '" download="' + +new Date() + '.png">' + data.url + '</a>')
+        $("#preview").append('<span>截图下载地址(24小时有效):</span><a href="' + data.url + '" download="' + +new Date() + '.png">' + data.url + '</a>')
       } else {
         if (data.err) {
           alert("截图生成失败！请重试！")
