@@ -13,6 +13,7 @@ process.on('message', async (m) => {
       height: 812,
       isMobile: m.isMobile
     })
+    await page.setUserAgent(m.userAgent)
     await page.goto(m.url, {
       timeout: 120000,
       waitUntil: 'networkidle0'

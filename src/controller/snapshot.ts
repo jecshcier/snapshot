@@ -25,6 +25,7 @@ export default function (app: any) {
     let url = ctx.request.body.url
     let width = parseInt(ctx.request.body.width, 10)
     let isMobile = ctx.request.body.isMobile
+    let userAgent = ctx.request.body.userAgent
     if (!url) {
       ctx.response.body = app.responseMessage.successMessage({
         msg: 'url不能为空',
@@ -67,7 +68,8 @@ export default function (app: any) {
       url: url,
       fileName: fileName,
       width: width,
-      isMobile: !!isMobile
+      isMobile: !!isMobile,
+      userAgent:userAgent || 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
     })
     ctx.response.body = app.responseMessage.successMessage({
       key: key
