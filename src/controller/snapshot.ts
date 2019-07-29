@@ -5,6 +5,7 @@ import * as uuidv1 from 'uuid/v1'
 
 import CONFIG from '../config'
 import SnapshotService from '../service/snapshot.service'
+import {IntegerDataType} from "sequelize"
 
 const createSnapshot = path.join(__dirname, '../process/createSnapshot')
 
@@ -22,6 +23,8 @@ export default function (app: any) {
   router.post('/getSnapshot', async (ctx, next) => {
     // console.log()
     let url = ctx.request.body.url
+    let width = parseInt(ctx.request.body.width, 10)
+    let isMobile = ctx.request.body.isMobile
     if (!url) {
       ctx.response.body = app.responseMessage.successMessage({
         msg: 'url不能为空',
@@ -62,7 +65,9 @@ export default function (app: any) {
     console.log("创建截图....")
     p.send({
       url: url,
-      fileName: fileName
+      fileName: fileName,
+      width: width,
+      isMobile: !!isMobile
     })
     ctx.response.body = app.responseMessage.successMessage({
       key: key

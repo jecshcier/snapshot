@@ -8,14 +8,20 @@ process.on('message', async (m) => {
   const browser = await puppeteer.launch()
   try {
     const page = await browser.newPage()
+    await page.setViewport({
+      width: m.width || 375,
+      height: 812,
+      isMobile: m.isMobile
+    })
     await page.goto(m.url, {
       timeout: 120000,
       waitUntil: 'networkidle0'
     })
     const height = await page.$$eval('body', el => el[0].scrollHeight)
     await page.setViewport({
-      width: 800,
-      height: height
+      width: m.width || 375,
+      height: height,
+      isMobile: m.isMobile
     })
     await page.goto(m.url, {
       timeout: 120000,
