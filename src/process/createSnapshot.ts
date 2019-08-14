@@ -11,6 +11,7 @@ process.on('message', async (m) => {
     await page.setViewport({
       width: m.width || 375,
       height: 812,
+      deviceScaleFactor: 2,
       isMobile: m.isMobile
     })
     await page.setUserAgent(m.userAgent)
@@ -22,6 +23,7 @@ process.on('message', async (m) => {
     await page.setViewport({
       width: m.width || 375,
       height: height,
+      deviceScaleFactor: 2,
       isMobile: m.isMobile
     })
     await page.goto(m.url, {
