@@ -31,6 +31,7 @@ export default function (app: any) {
         msg: 'url不能为空',
         key: null
       })
+
       return false
     }
     let p = child.fork(createSnapshot, [], {})
