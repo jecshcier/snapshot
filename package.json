@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/jecshcier/rms#readme",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/runtime": "^7.7.2",
     "debug": "^2.6.3",
     "ejs": "~2.3.3",
     "fs-extra": "^7.0.1",
@@ -66,9 +69,6 @@
     "@types/validator": "^10.11.1",
     "gulp-babel": "^8.0.0",
     "nodemon": "^1.8.1",
-    "typescript": "^3.2.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/runtime": "^7.7.2"
+    "typescript": "^3.2.4"
   }
 }
