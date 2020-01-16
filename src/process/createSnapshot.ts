@@ -44,6 +44,7 @@ process.on('message', async (m) => {
       flag: false,
       err: err
     })
+  } finally {
+    await browser.close()
   }
-  await browser.close()
 })

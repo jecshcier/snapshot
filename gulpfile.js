@@ -21,15 +21,16 @@ const buildTs = () => {
     .pipe(babel({
       presets: ['@babel/preset-env'],
       plugins: [
+        ["@babel/proposal-class-properties", {"spec": true}],
         ["@babel/plugin-transform-runtime"]
       ]
     }))
-    .pipe(uglify({
-      compress: {
-        drop_debugger: true,
-        drop_console: true
-      }
-    }))
+    // .pipe(uglify({
+    //   compress: {
+    //     drop_debugger: true,
+    //     drop_console: true
+    //   }
+    // }))
     .pipe(gulp.dest('compress'))
 }
 
