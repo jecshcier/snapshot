@@ -3,7 +3,16 @@ import CONFIG from '../config'
 
 const imgUrl = `${CONFIG.STATIC.dir}/${CONFIG.DIR.cacheDir}`
 
+
 process.on('message', async (m) => {
+  setTimeout(()=>{
+    //300秒后进程自动释放
+    process.send({
+      flag: false,
+      err: 'err'
+    })
+    process.exit(0)
+  },300000)
   console.log(m)
   const browser = await puppeteer.launch()
   try {
@@ -38,12 +47,14 @@ process.on('message', async (m) => {
     process.send({
       flag: true
     })
+    process.exit(0)
   } catch (err) {
     console.log(err)
     process.send({
       flag: false,
       err: err
     })
+    process.exit(0)
   }
   await browser.close()
 })

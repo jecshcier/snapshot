@@ -27,8 +27,8 @@
 
   function shot(url) {
     if (snapCheck) {
-      alert("请不要频繁点击！")
-      return false
+      // alert("请不要频繁点击！")
+      // return false
     }
     snapCheck = true
     $("#preview").empty()
@@ -78,7 +78,7 @@
             snapCheck = false
             postCount = 0
             $("#preview").empty()
-            alert("请求超时")
+            // alert("请求超时")
           } else {
             setTimeout(() => {
               getImgUrl(key)
