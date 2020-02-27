@@ -31,6 +31,7 @@ export default function (app: any) {
     let width = parseInt(ctx.request.body.width, 10)
     let isMobile = ctx.request.body.isMobile
     let userAgent = ctx.request.body.userAgent
+    let userData = ctx.request.body.userData || ""
     if (!url) {
       ctx.response.body = app.responseMessage.successMessage({
         msg: 'url不能为空',
@@ -51,7 +52,8 @@ export default function (app: any) {
             'snap_url': url,
             'file_name': fileName,
             'preview_url': `${CONFIG.DOMAIN}${CONFIG.STATIC.prefix}/${CONFIG.DIR.cacheDir}/${fileName}`,
-            'img_flag': 0
+            'img_flag': 0,
+            'user_data':userData
           })
         } catch (e) {
           console.log(e)
@@ -63,7 +65,8 @@ export default function (app: any) {
             'snap_url': url,
             'file_name': fileName,
             'preview_url': `${CONFIG.DOMAIN}${CONFIG.STATIC.prefix}/${CONFIG.DIR.cacheDir}/${fileName}`,
-            'img_flag': 1
+            'img_flag': 1,
+            'user_data':userData
           })
         } catch (e) {
           console.log(e)

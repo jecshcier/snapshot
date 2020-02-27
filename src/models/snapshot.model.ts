@@ -44,6 +44,13 @@ export default class Image extends Model<Image> {
   })
   img_flag: string
 
+  @Column({
+    type: DataType.STRING(1000),
+    allowNull: true,
+    comment: "用户信息"
+  })
+  user_data: string
+
   @CreatedAt
   create_time: Date
 
