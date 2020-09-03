@@ -39,7 +39,7 @@
     "koa-views": "^5.2.1",
     "mysql2": "^1.6.5",
     "node-schedule": "^1.3.2",
-    "puppeteer": "^1.12.2",
+    "puppeteer": "^1.13.0",
     "reflect-metadata": "^0.1.13",
     "save-dev": "^0.0.1-security",
     "sequelize": "^5.9.0",
