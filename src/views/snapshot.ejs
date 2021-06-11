@@ -34,7 +34,11 @@
     $("#preview").empty()
     $("#preview").html('截屏生成中...')
     if (url.indexOf('http://') || url.indexOf('https://')) {
-      sendAjax('/snapshot/getSnapshot', 'POST', 'json', {url: url}).done(function (data) {
+      sendAjax('/snapshot/getSnapshot', 'POST', 'json', {
+          url: url,
+          width:1920,
+          userAgent:`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36`
+      }).done(function (data) {
         if (!data.errCode) {
           getImgUrl(data.key)
         } else {

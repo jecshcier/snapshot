@@ -7,7 +7,7 @@ export default {
   },
   DB: {
     username: "root",
-    password: "123456",
+    password: "12345678",
     database: "rms",
     host: '127.0.0.1',
     port: 3306,

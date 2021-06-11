@@ -19,13 +19,13 @@ router.prefix('/snapshot')
 
 export default function (app: any) {
   const snapshotService = new SnapshotService(app)
-  router.get('/', async (ctx, next) => {
+  router.get('/', async (ctx:any, next) => {
     await ctx.render('snapshot', {
       title: '截屏工具 V1.0'
     })
   })
 
-  router.post('/getSnapshot', async (ctx, next) => {
+  router.post('/getSnapshot', async (ctx:any, next) => {
     // console.log()
     let url = ctx.request.body.url
     let width = parseInt(ctx.request.body.width, 10)
@@ -86,7 +86,7 @@ export default function (app: any) {
     })
   })
 
-  router.post('/getSnapshotImg', async (ctx, next) => {
+  router.post('/getSnapshotImg', async (ctx:any, next) => {
     let key = ctx.request.body.key
     try {
       let result = await snapshotService.getSnapshot(key)

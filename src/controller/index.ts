@@ -3,7 +3,7 @@ import * as Router from 'koa-router'
 const router = new Router()
 router.prefix('/snapshot/index')
 
-router.get('/', async (ctx, next) => {
+router.get('/', async (ctx:any, next) => {
   await ctx.render('index', {
     title: 'Hello Koa 2!'
   })
