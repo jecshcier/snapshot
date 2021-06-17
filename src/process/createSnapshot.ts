@@ -41,7 +41,7 @@ process.on('message', async (m:any) => {
     })
     console.log("等待渲染...")
     //等待三秒，目的是让页面有时间渲染完成
-    await new Promise((resolve)=>{
+    await new Promise((resolve:any)=>{
       setTimeout(()=>{
         console.log("ok...")
         resolve()
