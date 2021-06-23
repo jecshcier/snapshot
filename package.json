@@ -67,7 +67,6 @@
     "@types/sequelize": "4.28.3",
     "@types/uuid": "^3.4.4",
     "@types/validator": "10.11.1",
-    "gulp-babel": "^8.0.0",
     "nodemon": "^1.8.1",
     "typescript": "^3.2.4"
   }

@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const ts = require('gulp-typescript')
 const uglify = require("gulp-uglify")
-const babel = require('gulp-babel')
 const fs = require('fs-extra')
 const path = require('path')
 const tsProject = ts.createProject('tsconfig.json')
@@ -18,12 +17,6 @@ const copyViews = async () => {
 const buildTs = () => {
   return tsProject.src()
     .pipe(tsProject()).js
-    .pipe(babel({
-      presets: ['@babel/preset-env'],
-      plugins: [
-        ["@babel/plugin-transform-runtime"]
-      ]
-    }))
     .pipe(uglify({
       compress: {
         drop_debugger: true,
