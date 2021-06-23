@@ -8,7 +8,10 @@ const tsProject = ts.createProject('tsconfig.json')
 const copyViews = async () => {
   try {
     console.log("复制静态资源....")
-    await fs.copy(path.join(__dirname, 'src/views'), path.join(__dirname, 'compress/views'))
+    await Promise.all([
+      fs.copy(path.join(__dirname, 'src/views'), path.join(__dirname, 'compress/views')),
+      fs.copy(path.join(__dirname, 'package.json'), path.join(__dirname, 'compress/package.json'))
+    ])
   } catch (err) {
     console.log(err)
   }
