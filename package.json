@@ -4,7 +4,10 @@
   "description": "resourceManager by koa2 + sequelize + typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "task": "node ./process_task.js",
+    "start": "node ./bin/www.js"
   },
   "repository": {
     "type": "git",
