@@ -11,7 +11,7 @@
 <h1>截屏工具V1.1 简陋版</h1>
 <h4>阿C出品</h4>
 <div>
-    <input id="shotUrl" type="text" value="http://www.baidu.com" placeholder="请输入快照的网址">
+    <input id="shotUrl" type="text" value="https://baidu.com" placeholder="请输入快照的网址">
     <button onclick="shot(document.getElementById('shotUrl').value)">生成快照</button>
 </div>
 
@@ -35,9 +35,13 @@
     $("#preview").html('截屏生成中...')
     if (url.indexOf('http://') || url.indexOf('https://')) {
       sendAjax('/snapshot/getSnapshot', 'POST', 'json', {
-          url: url,
-          width:800,
-          userAgent:`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36`
+        isMobile: true,
+        url: url,
+        userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
+        userData: ``,
+        width: 375
+          // width:800,
+          // userAgent:`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36`
       }).done(function (data) {
         if (!data.errCode) {
           getImgUrl(data.key)
