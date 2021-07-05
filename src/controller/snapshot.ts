@@ -43,15 +43,16 @@ export default function (app: any) {
     let p = child.fork(createSnapshot, [], {})
     // pidArr[p.pid] = +new Date()
     let key = uuidv1()
-    const fileName = `image${+new Date() + Math.floor(Math.random() * 100000)}.png`
+    const fileName = `image${+new Date() + Math.floor(Math.random() * 100000)}`
     p.on('message', async (m) => {
+      const preview_url = `${CONFIG.DOMAIN}${CONFIG.STATIC.prefix}/${CONFIG.DIR.cacheDir}/${fileName}.png`
       if (m.flag) {
         try {
           await snapshotService.createSnapshot({
             'id': key,
             'snap_url': url,
             'file_name': fileName,
-            'preview_url': `${CONFIG.DOMAIN}${CONFIG.STATIC.prefix}/${CONFIG.DIR.cacheDir}/${fileName}`,
+            'preview_url':preview_url,
             'img_flag': 0,
             'user_data':userData
           })
@@ -64,7 +65,7 @@ export default function (app: any) {
             'id': key,
             'snap_url': url,
             'file_name': fileName,
-            'preview_url': `${CONFIG.DOMAIN}${CONFIG.STATIC.prefix}/${CONFIG.DIR.cacheDir}/${fileName}`,
+            'preview_url':preview_url,
             'img_flag': 1,
             'user_data':userData
           })
