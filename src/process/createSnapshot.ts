@@ -57,7 +57,6 @@ const autoScroll = async (page: any) => {
       function startInterval() {
         //滚动的总高度
         let totalHeight = 0;
-        // 每次向下滚动的高度 100 px
         const distance = window.screen.height;
         const scrollHeight = document.body.scrollHeight
         const maxHeight = scrollHeight - window.screen.height
@@ -68,7 +67,7 @@ const autoScroll = async (page: any) => {
           totalHeight += distance;
           console.log(maxHeight)
           console.log(totalHeight)
-          // 当滚动的总高度 大于 页面高度 说明滚到底了。也就是说到滚动条滚到底时，以上还会继续累加，直到超过页面高度
+          // 当滚动的总高度 大于 页面高度 说明滚到底了。
           if (totalHeight >= maxHeight) {
             resolve();
             clearInterval(timer);
