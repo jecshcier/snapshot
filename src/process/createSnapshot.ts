@@ -5,6 +5,12 @@ import * as sharp from 'sharp'
 
 const imgUrl = `${CONFIG.STATIC.dir}/${CONFIG.DIR.cacheDir}`
 
+let pageData: any = {
+  requestCount: 0,
+  requestFinishedCount: 0,
+  requestErrorCount: 0
+}
+
 const sleep = async (time: number) => {
   return new Promise((resolve: any, reject: any) => {
     setTimeout(() => {
@@ -81,48 +87,54 @@ const autoScroll = async (page: any) => {
   })
 }
 
-const setPageWaiter = async (page: any) => {
+const setPageListener = (page: any) => {
   page.on('console', (msg: any) => {
     for (let i = 0; i < msg.args().length; ++i)
       console.log(`${i}: ${msg.args()[i]}`);
   });
-  let requestCount = 0
-  let requestFinishedCount = 0
-  let requestErrorCount = 0
   page.on('request', () => {
-    requestCount++
-    console.log(`request - ${requestCount}`)
+    pageData.requestCount++
+    console.log(`request - ${pageData.requestCount}`)
   })
   page.on('requestfinished', () => {
-    requestFinishedCount++
-    console.log(`requestfinished - ${requestFinishedCount}`)
+    pageData.requestFinishedCount++
+    console.log(`requestfinished - ${pageData.requestFinishedCount}`)
   })
   page.on('requestfailed', () => {
-    requestErrorCount++
-    console.log(`requestfailed - ${requestErrorCount}`)
+    pageData.requestErrorCount++
+    console.log(`requestfailed - ${pageData.requestErrorCount}`)
   })
-  let height = await autoScroll(page)
-  // //等待三秒，目的是让页面有时间渲染=完成
-  console.log("页面滚动底，再等3秒")
-  await sleep(3000)
-  return new Promise(async (resolve, reject) => {
-    let count = 0
+
+  page.on('metrics', (res: any) => {
+    console.log('metrics')
+    console.log(res.title)
+    console.log(res.metrics)
+  })
+}
+
+const verifyRequestIsFinished = async () => {
+  let count = 0
+  await sleep(2000)
+  return new Promise((resolve, reject) => {
     let timer = setInterval(() => {
+      console.log(`第${count + 1}次请求对齐`)
+      console.log(`pageData.requestCount:${pageData.requestCount}`)
+      console.log(`pageData.requestFinishedCount:${pageData.requestFinishedCount}`)
+      console.log(`pageData.requestErrorCount:${pageData.requestErrorCount}`)
       count++
-      console.log(`第${count}次确认..`)
-      console.log(`当前request${requestCount}`)
-      console.log(`当前requestFinishedCount${requestFinishedCount}`)
-      console.log(`当前requestErrorCount${requestErrorCount}`)
-      //当请求都成功时
-      if ((requestCount !== 0) && (requestCount === (requestFinishedCount + requestErrorCount))) {
-        resolve(height)
+      if (pageData.requestCount === (pageData.requestFinishedCount + pageData.requestErrorCount)) {
+        resolve()
         clearInterval(timer)
+        return false
+      } else {
+        if (count > 20) {
+          resolve()
+          clearInterval(timer)
+          return false
+        }
+        verifyRequestIsFinished()
       }
-      if (count > 20) {
-        resolve(height)
-        clearInterval(timer)
-      }
-    }, 3000)
+    }, 1000)
   })
 }
 
@@ -170,15 +182,28 @@ process.on('message', async (m: any) => {
       isMobile: m.isMobile
     })
     await page.setUserAgent(m.userAgent)
+
+    //设置监听
+    setPageListener(page)
+
     await page.goto(m.url, {
       timeout: 120000,
       waitUntil: 'networkidle0'
     })
-    //设置监听
-    let pageHeight: any = await setPageWaiter(page)
+
+    //等待3s
+    console.log("等待2s...")
+    await page.waitFor(2000)
+
+    let pageHeight = await autoScroll(page)
+    console.log(`页面高度 - ${pageHeight}`)
+
+    //等待请求对齐
+    console.log(`等待请求对齐...`)
+    await verifyRequestIsFinished()
+
     //开始截图
     let imageArr: Array<any> = []
-    console.log(`页面高度 - ${pageHeight}`)
     const fileUrl = `${imgUrl}/${m.fileName}.png`
     const fileDirUrl = `${imgUrl}/${m.fileName}`
     //如果页面高度小于视口高度，则直接以页面高度截图

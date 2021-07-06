@@ -9,6 +9,14 @@ export default class SnapshotService {
     return this.app.sequelize.models.Image.create(data)
   }
 
+  updateSnapshot = (data: any, id: string) => {
+    return this.app.sequelize.models.Image.update(data, {
+      where: {
+        id
+      }
+    })
+  }
+
   deleteSnapshot(id: string) {
     return this.app.sequelize.models.Image.destroy({
       where: {
